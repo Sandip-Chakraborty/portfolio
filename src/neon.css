@@ -1,0 +1,189 @@
+/* =====================================================================
+   SCyberX neon layer  (loaded after styles.css, so it overrides it)
+   ===================================================================== */
+:root{--neon-green:#39ff14;--neon-cyan:#00f0ff;--neon-pink:#ff2bd6;--neon-yellow:#f5ff00;--neon-purple:#b026ff}
+::selection{background:#39ff14;color:#001a05}
+input{caret-color:var(--neon-green)}
+
+/* ---------- logo placements ---------- */
+.brand{min-width:330px}
+.brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--neon-cyan);box-shadow:0 0 12px #00f0ff88,0 0 24px #39ff1433;animation:logoGlow 3s ease-in-out infinite}
+.brand small{letter-spacing:.4px}
+.boot-logo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--neon-cyan);box-shadow:0 0 30px #00f0ffaa,0 0 70px #39ff1455;animation:logoGlow 1.4s ease-in-out infinite}
+.assistant-orb{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--neon-cyan);box-shadow:0 0 14px #00f0ff77}
+@keyframes logoGlow{50%{box-shadow:0 0 22px #00f0ffcc,0 0 40px #39ff1466}}
+
+/* ---------- typing text + blinking caret ---------- */
+.hero h1 .typed{display:inline-block;color:var(--neon-green);text-shadow:0 0 6px #39ff14aa,0 0 22px #39ff1477,0 0 44px #00f0ff44;min-height:1.13em;white-space:nowrap}
+.caret{display:inline-block;width:.09em;min-width:5px;height:.82em;margin-left:.07em;vertical-align:-.04em;background:var(--neon-green);box-shadow:0 0 8px var(--neon-green),0 0 20px var(--neon-green);animation:caretBlink .75s steps(1) infinite}
+@keyframes caretBlink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+
+/* ---------- neon hacker cursor ---------- */
+.neon-cursor{display:none}
+.has-neon-cursor,.has-neon-cursor *{cursor:none!important}
+.has-neon-cursor .neon-cursor{display:block;position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0;transition:opacity .2s}
+.has-neon-cursor.cursor-live .neon-cursor{opacity:1}
+.cursor-dot,.cursor-ring,.cursor-trail{position:fixed;left:0;top:0;pointer-events:none;will-change:transform}
+.cursor-dot{width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--neon-green);box-shadow:0 0 6px var(--neon-green),0 0 16px var(--neon-green),0 0 30px #39ff1488;animation:cursorBlink 1s steps(1) infinite}
+@keyframes cursorBlink{0%,60%{opacity:1}60.01%,100%{opacity:.25}}
+.cursor-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid var(--neon-cyan);border-radius:50%;box-shadow:0 0 10px #00f0ffaa,inset 0 0 10px #00f0ff44;transition:width .2s,height .2s,margin .2s,border-color .2s,box-shadow .2s}
+.cursor-ring i{position:absolute;background:var(--neon-cyan);box-shadow:0 0 6px var(--neon-cyan);transition:background .2s,box-shadow .2s}
+.cursor-ring i:nth-child(1){left:50%;top:-7px;width:1.5px;height:10px;transform:translateX(-50%)}
+.cursor-ring i:nth-child(2){left:50%;bottom:-7px;width:1.5px;height:10px;transform:translateX(-50%)}
+.cursor-ring i:nth-child(3){top:50%;left:-7px;height:1.5px;width:10px;transform:translateY(-50%)}
+.cursor-ring i:nth-child(4){top:50%;right:-7px;height:1.5px;width:10px;transform:translateY(-50%)}
+.cursor-ring.is-link{width:54px;height:54px;margin:-27px 0 0 -27px;border-color:var(--neon-pink);box-shadow:0 0 14px #ff2bd6bb,inset 0 0 14px #ff2bd655;border-style:dashed}
+.cursor-ring.is-link i{background:var(--neon-pink);box-shadow:0 0 6px var(--neon-pink)}
+.cursor-ring.is-down{width:24px;height:24px;margin:-12px 0 0 -12px;border-color:var(--neon-green)}
+.cursor-trail{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--neon-green);opacity:.5;box-shadow:0 0 8px var(--neon-green)}
+
+/* ---------- arc reactor ---------- */
+.reactor-wrap{height:auto;width:100%;max-width:420px;aspect-ratio:1;margin:auto;position:relative;display:block}
+.arc-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.arc-svg .spin{transform-origin:200px 200px;animation:spin 60s linear infinite}
+.arc-svg .spin-slow{animation-duration:70s}
+.arc-svg .spin-rev{animation-duration:16s;animation-direction:reverse}
+.arc-svg .spin-fast{animation-duration:6s}
+.arc-svg .ticks line{stroke:#19eaff;stroke-width:1.2;opacity:.55}
+.arc-svg .ticks line.tick-long{stroke:var(--neon-green);stroke-width:2.2;opacity:1;filter:drop-shadow(0 0 3px var(--neon-green))}
+.arc-svg .ring-dash{fill:none;stroke:var(--neon-green);stroke-width:1.4;stroke-dasharray:2 9;opacity:.7}
+.arc-svg .arcs path{fill:none;stroke:var(--neon-cyan);stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 6px var(--neon-cyan))}
+.arc-svg .ring-thin{fill:none;stroke:#19eaff;stroke-width:1;opacity:.5}
+.arc-svg .coil{fill:rgba(0,240,255,.12);stroke:var(--neon-cyan);stroke-width:1.4;stroke-linejoin:round;animation:coilPulse 1.8s ease-in-out infinite}
+.arc-svg .ring-thick{fill:none;stroke:var(--neon-green);stroke-width:3;filter:drop-shadow(0 0 7px var(--neon-green)) drop-shadow(0 0 16px #39ff1488)}
+.arc-svg .inner-arcs path{fill:none;stroke:#eafffb;stroke-width:2;stroke-linecap:round;filter:drop-shadow(0 0 5px #00f0ff)}
+.arc-svg .core-bg{fill:#00060a;stroke:var(--neon-cyan);stroke-width:1.5}
+.arc-svg .arc-halo{animation:haloPulse 3s ease-in-out infinite}
+.reactor-logo{position:absolute;left:50%;top:50%;width:41.5%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;object-fit:cover;box-shadow:0 0 28px #00f0ffaa,0 0 60px #39ff1455;animation:logoBreath 3.2s ease-in-out infinite}
+.reactor-wrap .orbit-label{z-index:2}
+.reactor-wrap .label-top{top:-4px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.reactor-wrap .label-bottom{bottom:-6px;left:50%;transform:translateX(-50%);white-space:nowrap}
+@keyframes coilPulse{0%,100%{fill:rgba(0,240,255,.1);filter:none}50%{fill:rgba(57,255,20,.4);filter:drop-shadow(0 0 7px #39ff14)}}
+@keyframes haloPulse{50%{opacity:.5}}
+@keyframes logoBreath{50%{box-shadow:0 0 40px #00f0ffdd,0 0 90px #39ff1477}}
+
+/* ---------- hero terminal input ---------- */
+.mini-terminal .term-cmd{color:#eafffb}
+.mini-terminal .term-cmd span{color:var(--neon-pink)}
+.term-input{display:flex;align-items:center;gap:8px;border:1px solid #14738a;border-radius:5px;padding:6px 8px;margin-top:10px;transition:.2s}
+.term-input:focus-within{border-color:var(--neon-green);box-shadow:0 0 12px #39ff1455}
+.term-input span{color:var(--neon-pink);font:11px 'Share Tech Mono',monospace}
+.term-input input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--neon-green);font:11px 'Share Tech Mono',monospace}
+.term-input input::placeholder{color:#4f8b99}
+
+/* ---------- SKILLS & TECHNOLOGIES : hacker / neon ---------- */
+.skills-panel{background:linear-gradient(150deg,#010a05,#00060a 60%,#080110);border-color:#39ff1455;box-shadow:0 0 0 1px #39ff1411,0 0 30px #39ff1418,inset 0 0 40px #39ff1408}
+.skills-panel:before{background:var(--neon-green);width:70px;height:2px}
+.skills-panel:after{content:'';position:absolute;right:0;bottom:0;width:70px;height:2px;background:var(--neon-pink);box-shadow:0 0 12px var(--neon-pink)}
+.matrix-rain{position:absolute;inset:0;width:100%;height:100%;opacity:.22;pointer-events:none;mask-image:linear-gradient(to bottom,transparent,#000 25%,#000 75%,transparent)}
+.skills-inner{position:relative;z-index:1}
+.skills-panel .section-heading{border-color:#39ff1455}
+.skills-panel .section-heading svg{color:var(--neon-green);filter:drop-shadow(0 0 6px var(--neon-green))}
+.skills-panel .section-heading h2{color:var(--neon-green);letter-spacing:1.5px;text-shadow:0 0 5px #39ff14,0 0 18px #39ff1488;animation:neonFlicker 5s infinite}
+.skills-panel .section-heading>span{color:var(--neon-pink);text-shadow:0 0 8px #ff2bd699}
+.skills-panel .section-subtitle{color:#7dffa0;font-family:'Share Tech Mono',monospace;font-size:11px;text-shadow:0 0 6px #39ff1466}
+.blink-us{animation:caretBlink .9s steps(1) infinite;color:var(--neon-green)}
+.skill-row{--c:#39ff14}
+.skill-icon{border-color:var(--c);color:var(--c);background:color-mix(in srgb,var(--c) 10%,#000);box-shadow:0 0 12px color-mix(in srgb,var(--c) 55%,transparent),inset 0 0 10px color-mix(in srgb,var(--c) 25%,transparent);transition:.25s}
+.skill-icon svg{filter:drop-shadow(0 0 4px var(--c))}
+.skill-row:hover .skill-icon{transform:scale(1.1) rotate(8deg)}
+.skill-content h3{color:var(--c);letter-spacing:1px;text-shadow:0 0 8px color-mix(in srgb,var(--c) 70%,transparent)}
+.skills-panel .chip{border-color:var(--c);color:var(--c);background:color-mix(in srgb,var(--c) 8%,#000);text-shadow:0 0 6px color-mix(in srgb,var(--c) 70%,transparent);box-shadow:0 0 8px color-mix(in srgb,var(--c) 28%,transparent),inset 0 0 6px color-mix(in srgb,var(--c) 14%,transparent);transition:.2s}
+.skills-panel .chip:hover{background:var(--c);color:#02080c;text-shadow:none;box-shadow:0 0 18px var(--c),0 0 36px color-mix(in srgb,var(--c) 60%,transparent);transform:translateY(-2px)}
+@keyframes neonFlicker{0%,19%,21%,23%,25%,54%,56%,100%{opacity:1}20%,24%,55%{opacity:.55}}
+
+/* ---------- certifications ---------- */
+.cert-heading-img{width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 0 6px #19eaffaa);animation:logoGlow 3s ease-in-out infinite}
+.section-heading>div:has(.cert-heading-img){gap:12px}
+.org-logo{width:58px;height:58px;flex-shrink:0;border:1px solid #087d8e;border-radius:10px;display:grid;place-items:center;background:#e9fbff;padding:5px;box-shadow:0 0 12px #00f0ff30;overflow:hidden}
+.org-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.org-logo.is-fallback{background:linear-gradient(145deg,#03202a,#01090e);border-color:var(--neon-green);box-shadow:0 0 12px #39ff1444,inset 0 0 12px #39ff1420}
+.org-logo.is-fallback span{font:700 15px 'Orbitron',sans-serif;color:var(--neon-green);text-shadow:0 0 8px var(--neon-green)}
+.cert-org{display:block;margin-top:5px;font:9px 'Share Tech Mono',monospace;color:var(--neon-pink);letter-spacing:.5px}
+
+/* ---------- command-opened section: neon blinking title ---------- */
+.hl .section-heading h2,.hl.hero h1,.hl .contact-copy>h2{color:#fff!important;animation:hlBlink .5s steps(1) 9!important}
+.hl .section-heading h2::after{content:'  ◄ ACCESSED';font-size:.72em;letter-spacing:2px;color:var(--neon-green);text-shadow:0 0 8px var(--neon-green)}
+.hl.panel,.hl .panel{border-color:var(--neon-green)!important;animation:hlGlow .9s ease-in-out 5}
+.hl.stats-grid .stat-card{border-color:var(--neon-green);animation:hlGlow .9s ease-in-out 5}
+.hl.stats-grid .stat-label{color:#fff;animation:hlBlink .5s steps(1) 9}
+.hl .section-heading svg,.hl .section-heading .cert-heading-img{filter:drop-shadow(0 0 10px var(--neon-green))}
+@keyframes hlBlink{
+  0%,100%{color:#fff;text-shadow:0 0 4px #fff,0 0 10px #39ff14,0 0 22px #39ff14,0 0 42px #39ff14,0 0 80px #00f0ff;opacity:1}
+  50%{color:#39ff14;text-shadow:0 0 2px #39ff14,0 0 6px #39ff1466;opacity:.25}
+}
+@keyframes hlGlow{0%,100%{box-shadow:0 0 0 1px #39ff1488,0 0 18px #39ff1455,inset 0 0 18px #39ff1422}50%{box-shadow:0 0 0 1px #39ff14,0 0 42px #39ff14aa,0 0 80px #00f0ff55,inset 0 0 34px #39ff1440}}
+
+/* ---------- responsive tweaks ---------- */
+@media(max-width:1150px){.brand{min-width:0}.reactor-wrap{max-width:360px}}
+@media(max-width:760px){.brand-logo{width:38px;height:38px}.reactor-wrap{grid-column:1;grid-row:auto;width:min(82vw,340px);max-width:none;height:auto;margin:14px auto}.reactor-wrap .orbit-label{font-size:8px}.org-logo{width:50px;height:50px}.hl .section-heading h2::after{display:none}}
+@media(prefers-reduced-motion:reduce){.caret,.cursor-dot,.blink-us{animation:none!important}.matrix-rain{display:none}}
+
+/* =====================================================================
+   Terminal window + live attack map (bottom-right panel)
+   ===================================================================== */
+.contact-grid{grid-template-columns:.9fr 1.1fr}
+.term-panel{padding:0;background:#00070a;border-color:#39ff1466;box-shadow:0 0 0 1px #39ff1411,0 0 28px #39ff1420,inset 0 0 40px #39ff1408;display:flex;flex-direction:column}
+.term-bar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:linear-gradient(#06210f,#031208);border-bottom:1px solid #39ff1455;font:10px 'Share Tech Mono',monospace;color:var(--neon-green)}
+.term-bar b{font-weight:400;margin-left:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-shadow:0 0 6px #39ff1488}
+.term-bar .live-dot{margin:0 0 0 auto}
+.td{width:10px;height:10px;border-radius:50%;flex-shrink:0}.td.r{background:#ff4d4d}.td.y{background:#ffd23f}.td.g{background:#39ff14;box-shadow:0 0 6px #39ff14}
+.term-body{padding:12px 14px 14px;font-family:'Share Tech Mono',monospace}
+.tmap-stats{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font:10px 'Share Tech Mono',monospace;color:#6fbf7f;margin-bottom:8px}
+.tmap-stats b{color:var(--neon-green);font-weight:400;text-shadow:0 0 6px #39ff1488}
+.tmap-mode{display:inline-flex;align-items:center;gap:6px;padding:2px 7px;border:1px solid #f5ff0088;border-radius:3px;color:var(--neon-yellow)}
+.tmap-mode i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;animation:pulse 1.2s infinite}
+.tmap-mode.is-live{border-color:#ff3b3b99;color:#ff5a5a}
+.tmap-screen{position:relative;width:100%;border:1px solid #39ff1455;border-radius:4px;background:radial-gradient(ellipse at 50% 45%,#04200c,#000805 75%);overflow:hidden;box-shadow:inset 0 0 30px #000}
+.tmap-screen canvas{display:block;width:100%}
+.tmap-crt{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.28) 3px),radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.55))}
+.tmap-legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin:8px 0;font:8.5px 'Share Tech Mono',monospace}
+.tmap-legend span{display:inline-flex;align-items:center;gap:5px}.tmap-legend i{width:6px;height:6px;border-radius:1px;box-shadow:0 0 6px currentColor}
+.tmap-log{min-height:92px;border:1px solid #39ff1433;border-radius:4px;background:#000a05;padding:7px 9px}
+.tmap-log p{margin:2px 0;font:10px 'Share Tech Mono',monospace;color:#b6f5c3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:logIn .35s ease-out}
+.tmap-log p b{font-weight:400;text-shadow:0 0 6px currentColor}.tmap-log em{color:var(--neon-green);font-style:normal}
+.tmap-log .dim,.dim{color:#4c8a5a}.tmap-log .is-home{background:linear-gradient(90deg,#00f0ff22,transparent)}
+@keyframes logIn{from{opacity:0;transform:translateX(-6px)}}
+.term-panel .assistant-message{margin:12px 0 8px;color:#b6f5c3;min-height:0;font-size:11px}
+.term-panel .assistant-message span{color:var(--neon-pink)}
+.term-panel .quick-commands button{border-color:#39ff1466;background:#021208;color:var(--neon-green)}
+.term-panel .quick-commands button:hover{background:var(--neon-green);color:#001a05;box-shadow:0 0 14px #39ff1499}
+.term-form{border-color:#39ff1488;background:#000d06;margin-top:10px}
+.term-form:focus-within{box-shadow:0 0 14px #39ff1466}
+.term-form>span{font:10px 'Share Tech Mono',monospace;color:var(--neon-pink);white-space:nowrap}
+.term-form input{color:var(--neon-green)!important}
+.term-panel .assistant-hint{color:#4c8a5a;margin:9px 0 0}
+@media(max-width:1150px){.contact-grid{grid-template-columns:1fr}}
+
+/* ---------- terminal output panes ---------- */
+.term-out{overflow-y:auto;overflow-x:hidden;font:11px/1.55 'Share Tech Mono',monospace;scrollbar-width:thin;scrollbar-color:#39ff1488 transparent;overscroll-behavior:contain}
+.term-out::-webkit-scrollbar{width:6px}.term-out::-webkit-scrollbar-thumb{background:#39ff1466;border-radius:3px}
+.hero-out{max-height:150px;padding-right:4px}
+.pane-out{height:190px;margin:12px 0 8px;padding:8px 10px;border:1px solid #39ff1433;border-radius:4px;background:#000a05}
+.mini-terminal .tl,.term-out .tl{margin:1px 0;white-space:pre-wrap;word-break:break-word;color:#b6f5c3}
+.tl-cmd{color:#eafffb!important}.tl-cmd span{color:var(--neon-pink)}
+.mini-terminal .tl.tl-ok,.tl-ok{color:var(--neon-green)!important;text-shadow:0 0 6px #39ff1466}
+.mini-terminal .tl.tl-err,.tl-err{color:#ff5a7a!important}
+.mini-terminal .tl.tl-dim,.tl-dim{color:#5f9a6c!important}
+.mini-terminal .tl.tl-head,.tl-head{color:var(--neon-cyan)!important;text-shadow:0 0 8px #00f0ff88}
+.mini-terminal .tl.tl-art,.tl-art{color:var(--neon-green)!important;white-space:pre!important;overflow-x:auto;font-size:10px;line-height:1.35}
+.term-input span{white-space:nowrap}
+
+/* ---------- Cyber World Organization card (Open Communication Channel) ---------- */
+.contact-copy{display:flex;flex-direction:column}
+.contact-copy>.config-note{margin-top:auto!important;padding-top:16px}
+.cwo-card{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;margin:26px 0 8px;padding:26px 18px;border:1px solid #19eaff33;border-radius:12px;background:radial-gradient(ellipse at 50% 35%,#06303a66,transparent 70%),linear-gradient(160deg,#021a22,#01090e);position:relative;overflow:hidden}
+.cwo-card:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 3px,rgba(0,255,210,.035) 4px);pointer-events:none}
+.cwo-logo{position:relative;width:min(280px,64%);aspect-ratio:1;display:grid;place-items:center}
+.cwo-logo img{width:78%;height:78%;border-radius:50%;object-fit:cover;box-shadow:0 0 30px #19eaff88,0 0 70px #00ffae44;animation:logoBreath 3.4s ease-in-out infinite;position:relative;z-index:1}
+.cwo-ring{position:absolute;border-radius:50%;pointer-events:none}
+.cwo-ring.r1{inset:0;border:1px dashed var(--neon-cyan);opacity:.8;animation:spin 30s linear infinite}
+.cwo-ring.r2{inset:5%;border:2px solid transparent;border-top-color:var(--neon-green);border-bottom-color:var(--neon-green);filter:drop-shadow(0 0 6px var(--neon-green));animation:spin 9s linear infinite reverse}
+.cwo-info{text-align:center;position:relative}
+.cwo-tag{display:inline-flex;align-items:center;gap:6px;font:10px 'Share Tech Mono',monospace;letter-spacing:2px;color:var(--neon-green);border:1px solid #39ff1466;border-radius:3px;padding:3px 9px;text-shadow:0 0 6px #39ff1488}
+.cwo-tag .live-dot{margin:0}
+.cwo-info h3{margin:14px 0 6px;font:700 clamp(22px,2.6vw,32px) 'Orbitron',sans-serif;letter-spacing:1px;color:#fff;text-shadow:0 0 8px #19eaff,0 0 24px #19eaff88}
+.cwo-org{margin:0;font:13px 'Share Tech Mono',monospace;color:#b9ecf2}
+.cwo-org b{color:var(--neon-green);text-shadow:0 0 8px #39ff1488;font-weight:400}
+.cwo-meta{margin:6px 0 0;font:11px 'Share Tech Mono',monospace;color:var(--neon-pink)}
+@media(max-width:760px){.cwo-logo{width:min(240px,70%)}}
