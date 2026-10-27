@@ -9,15 +9,15 @@ import { runCommand, complete, promptFor } from './terminalEngine.js';
 import './styles.css';
 import './neon.css';
 
-const BRAND = 'SCyberX';
+const BRAND = 'SCyberootX';
 
 const profile = {
-  name: 'Sandip Chakraborty',
+  name: 'Sandip Chakraborty ~ a.k.a SCyberootX',
   location: 'Ramnagar, Kolkata, West Bengal, India',
-  email: 'your-email@example.com', // Replace with your real email before publishing.
+  email: 'scyberootx@gmail.com', // Replace with your real email before publishing.
   github: 'https://github.com/Sandip-Chakraborty/',
-  linkedin: 'https://www.linkedin.com/', // Replace with your LinkedIn profile URL.
-  resume: '/resume.pdf' // Add your resume as public/resume.pdf.
+  linkedin: 'https://www.linkedin.com/in/sandip-chakraborty01/', // Replace with your LinkedIn profile URL.
+  resume: './resume.pdf' // Add your resume as public/resume.pdf.
 };
 
 // "accent" is the neon colour used for that skill group.
@@ -38,10 +38,10 @@ const projects = [
 // Put each organisation's real logo in  public/logos/<logo>  (png/svg/jpg - just keep the file name below
 // or change it here). Until a file exists, a neon monogram badge is shown instead.
 const certifications = [
-  { name: 'CEH', desc: 'Certified Ethical Hacker', date: 'Sep 2017', org: 'EC-Council', logo: 'ceh.png', mono: 'EC' },
-  { name: 'CPTE', desc: 'Certified Penetration Testing Expert', date: 'In progress', org: 'CPTE', logo: 'cpte.png', mono: 'CP' },
-  { name: 'UPSIFS', desc: 'Cyber Forensics in Practice', date: '19 May 2025', org: 'UPSIFS', logo: 'upsifs.png', mono: 'UP' },
-  { name: 'Cyber World Organization', desc: 'Chief Secretary · Cyber Forensic Analyst · Non-profit', date: 'May 2025 – Present', org: 'Cyber World Organization', logo: 'cyber-world-organization.png', mono: 'CW' }
+  { name: 'CEH', desc: 'Certified Ethical Hacker', date: 'Sep 2017', org: 'EC-Council', logo: 'eccouncil.png', mono: 'EC' },
+  { name: 'CPTE', desc: 'Certified Penetration Testing Engineer', date: 'In progress', org: 'Mile2 Cybersecurity Institute', logo: 'miles.png', mono: 'CP' },
+  { name: 'UPSIFS', desc: 'Cyber Forensics in Practice', date: '19 May 2025', org: 'UPSIFS ', logo: 'upsifs.png', mono: 'UP' },
+  { name: 'Cyber World Organization', desc: 'Chief Secretary · Co-Founder · Non-profit · CCA', date: 'May 2025 – Present', org: 'Cyber World Organization ', logo: 'cyber-world-organization.png', mono: 'CW' }
 ];
 
 const prefersReducedMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -364,7 +364,7 @@ function App() {
         </div>
       </section>
     </main>
-    <footer className="footer section-shell"><span>© {new Date().getFullYear()} SANDIP CHAKRABORTY · {BRAND}</span><span>BUILT WITH <b>HTML5 · CSS3 · REACT · JAVASCRIPT</b></span><span className="footer-status"><i /> THINK <b>›</b> ANALYZE <b>›</b> SECURE</span></footer>
+    <footer className="footer section-shell"><span>© {new Date().getFullYear()} SANDIP CHAKRABORTY · {BRAND}</span><span>BUILT WITH: ❤️ <b>CWO · CCA</b></span><span className="footer-status"><i /> THINK <b>›</b> ANALYZE <b>›</b> SECURE</span></footer>
   </div>;
 }
 
