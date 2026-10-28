@@ -1,4 +1,4 @@
-# SCyberX Cybersecurity Portfolio
+# SCyberootX Cybersecurity Portfolio
 
 Responsive React + Vite portfolio with a neon cyan/green sci-fi interface, animated HUD, clock, terminal-style assistant, skill matrix, projects, certifications and contact section.
 
